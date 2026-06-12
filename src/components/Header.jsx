@@ -1,4 +1,4 @@
-import logo from "../assets/logo-am.svg";
+import logo from "../assets/logo-am.png";
 
 export function Header({ content, language, languages, onLanguageChange }) {
   const { nav, profile } = content;
