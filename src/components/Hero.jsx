@@ -1,4 +1,4 @@
-import logo from "../assets/logo-am.png";
+import logo from "../assets/logo-am.svg";
 import { Reveal } from "./Reveal";
 
 export function Hero({ content }) {
