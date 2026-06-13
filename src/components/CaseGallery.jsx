@@ -1,4 +1,4 @@
-import { useCallback, useRef, useState } from "react";
+import { useCallback, useState } from "react";
 import { ImageLightbox } from "./ImageLightbox";
 
 const screenshotGroups = {
@@ -27,7 +27,6 @@ export function CaseGallery({ caseItem, label }) {
   const screenshots = screenshotGroups[caseItem.id] ?? [];
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isLightboxOpen, setIsLightboxOpen] = useState(false);
-  const triggerRefs = useRef([]);
 
   const openLightbox = (index) => {
     setCurrentIndex(index);
@@ -36,10 +35,7 @@ export function CaseGallery({ caseItem, label }) {
 
   const closeLightbox = useCallback(() => {
     setIsLightboxOpen(false);
-    window.setTimeout(() => {
-      triggerRefs.current[currentIndex]?.focus();
-    }, 0);
-  }, [currentIndex]);
+  }, []);
 
   const showPrevious = useCallback(() => {
     setCurrentIndex((index) =>
@@ -73,9 +69,6 @@ export function CaseGallery({ caseItem, label }) {
               }
               key={src}
               type="button"
-              ref={(element) => {
-                triggerRefs.current[index] = element;
-              }}
               onClick={() => openLightbox(index)}
               aria-label={`Abrir screenshot ${index + 1} de ${caseItem.title}`}
             >
