@@ -11,6 +11,7 @@ export function ImageLightbox({
 }) {
   const closeButtonRef = useRef(null);
   const panelRef = useRef(null);
+  const touchYRef = useRef(null);
 
   useEffect(() => {
     if (!isOpen) {
@@ -18,10 +19,6 @@ export function ImageLightbox({
     }
 
     closeButtonRef.current?.focus();
-    panelRef.current?.scrollIntoView({
-      behavior: "smooth",
-      block: "nearest",
-    });
 
     const handleKeyDown = (event) => {
       if (event.key === "Escape") {
@@ -64,6 +61,27 @@ export function ImageLightbox({
       className="image-lightbox"
       role="region"
       aria-label={`Galeria de screenshots de ${projectTitle}`}
+      onWheel={(event) => {
+        event.preventDefault();
+        window.scrollBy({
+          top: event.deltaY,
+          left: event.deltaX,
+        });
+      }}
+      onTouchStart={(event) => {
+        touchYRef.current = event.touches[0]?.clientY ?? null;
+      }}
+      onTouchMove={(event) => {
+        if (touchYRef.current === null) {
+          return;
+        }
+
+        const nextY = event.touches[0]?.clientY ?? touchYRef.current;
+        window.scrollBy({
+          top: touchYRef.current - nextY,
+        });
+        touchYRef.current = nextY;
+      }}
     >
       <div className="lightbox-panel" ref={panelRef}>
         <div className="lightbox-topbar">
