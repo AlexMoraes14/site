@@ -55,7 +55,7 @@ export function ImageLightbox({
       role="dialog"
       aria-modal="true"
       aria-label={`Galeria de screenshots de ${projectTitle}`}
-      onMouseDown={(event) => {
+      onClick={(event) => {
         if (event.target === event.currentTarget) {
           onClose();
         }
@@ -81,14 +81,7 @@ export function ImageLightbox({
           </button>
         </div>
 
-        <div
-          className="lightbox-stage"
-          onMouseDown={(event) => {
-            if (event.target === event.currentTarget) {
-              onClose();
-            }
-          }}
-        >
+        <div className="lightbox-stage">
           {hasMultipleImages && (
             <button
               className="lightbox-arrow lightbox-arrow-left"
