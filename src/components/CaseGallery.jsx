@@ -1,3 +1,6 @@
+import { useCallback, useRef, useState } from "react";
+import { ImageLightbox } from "./ImageLightbox";
+
 const screenshotGroups = {
   sara: [
     "/cases/sara/sara-01.png",
@@ -22,36 +25,79 @@ const screenshotGroups = {
 
 export function CaseGallery({ caseItem, label }) {
   const screenshots = screenshotGroups[caseItem.id] ?? [];
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isLightboxOpen, setIsLightboxOpen] = useState(false);
+  const triggerRefs = useRef([]);
+
+  const openLightbox = (index) => {
+    setCurrentIndex(index);
+    setIsLightboxOpen(true);
+  };
+
+  const closeLightbox = useCallback(() => {
+    setIsLightboxOpen(false);
+    window.setTimeout(() => {
+      triggerRefs.current[currentIndex]?.focus();
+    }, 0);
+  }, [currentIndex]);
+
+  const showPrevious = useCallback(() => {
+    setCurrentIndex((index) =>
+      index === 0 ? screenshots.length - 1 : index - 1,
+    );
+  }, [screenshots.length]);
+
+  const showNext = useCallback(() => {
+    setCurrentIndex((index) =>
+      index === screenshots.length - 1 ? 0 : index + 1,
+    );
+  }, [screenshots.length]);
 
   if (!screenshots.length) {
     return null;
   }
 
   return (
-    <div className="case-gallery" aria-label={`${label} ${caseItem.title}`}>
-      <div className="case-gallery-head">
-        <small>{label}</small>
-        <span>{screenshots.length} telas reais</span>
+    <>
+      <div className="case-gallery" aria-label={`${label} ${caseItem.title}`}>
+        <div className="case-gallery-head">
+          <small>{label}</small>
+          <span>{screenshots.length} telas reais</span>
+        </div>
+
+        <div className="screenshot-grid">
+          {screenshots.map((src, index) => (
+            <button
+              className={
+                index === 0 ? "screenshot-frame is-featured" : "screenshot-frame"
+              }
+              key={src}
+              type="button"
+              ref={(element) => {
+                triggerRefs.current[index] = element;
+              }}
+              onClick={() => openLightbox(index)}
+              aria-label={`Abrir screenshot ${index + 1} de ${caseItem.title}`}
+            >
+              <img
+                src={src}
+                alt={`${caseItem.title} - screenshot ${index + 1}`}
+                loading="lazy"
+              />
+            </button>
+          ))}
+        </div>
       </div>
 
-      <div className="screenshot-grid">
-        {screenshots.map((src, index) => (
-          <a
-            className={index === 0 ? "screenshot-frame is-featured" : "screenshot-frame"}
-            href={src}
-            key={src}
-            target="_blank"
-            rel="noreferrer"
-            aria-label={`Abrir screenshot ${index + 1} de ${caseItem.title}`}
-          >
-            <img
-              src={src}
-              alt={`${caseItem.title} - screenshot ${index + 1}`}
-              loading="lazy"
-            />
-          </a>
-        ))}
-      </div>
-    </div>
+      <ImageLightbox
+        images={screenshots}
+        currentIndex={currentIndex}
+        projectTitle={caseItem.title}
+        isOpen={isLightboxOpen}
+        onClose={closeLightbox}
+        onNext={showNext}
+        onPrevious={showPrevious}
+      />
+    </>
   );
 }
