@@ -1,4 +1,4 @@
-import { CaseMockup } from "./CaseMockups";
+import { CaseGallery } from "./CaseGallery";
 import { Reveal } from "./Reveal";
 import { SectionIntro } from "./SectionIntro";
 
@@ -13,6 +13,10 @@ export function CaseStudies({ content }) {
           title={casesIntro.title}
           text={casesIntro.text}
         />
+      </Reveal>
+
+      <Reveal delay={80}>
+        <p className="case-disclaimer">{casesIntro.disclaimer}</p>
       </Reveal>
 
       <div className="case-list">
@@ -54,7 +58,7 @@ export function CaseStudies({ content }) {
               </div>
             </div>
 
-            <CaseMockup mockups={content.mockups} type={caseItem.id} />
+            <CaseGallery caseItem={caseItem} label={casesIntro.visual} />
           </Reveal>
         ))}
       </div>

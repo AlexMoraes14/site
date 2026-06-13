@@ -76,6 +76,9 @@ export const portfolio = {
       problem: "Problema",
       solution: "Solução",
       result: "Resultado",
+      visual: "Demonstração visual",
+      disclaimer:
+        "Projetos desenvolvidos a partir de necessidades operacionais reais. Todos os exemplos usam dados fictícios, anonimizados ou não sensíveis sempre que necessário.",
       tagsLabel: "Tecnologias do case",
     },
     cases: [
@@ -83,45 +86,45 @@ export const portfolio = {
         id: "sara",
         number: "01",
         title: "SARA",
-        subtitle: "Sistema Auxiliar Rotinas Automáticas",
+        subtitle: "Sistema Auxiliar de Rotinas Automáticas",
         summary:
-          "Interface para organizar XMLs e arquivos operacionais, executar rotinas recorrentes e registrar logs claros para conferência posterior.",
+          "Sistema criado para apoiar rotinas operacionais repetitivas, organizando arquivos, automatizando transferências, gerando relatórios, agendando execuções e reduzindo esforço manual com processos padronizados.",
         problem:
-          "Arquivos recebidos em volume, organização manual e pouca visibilidade sobre o que foi processado.",
+          "Arquivos e tarefas recorrentes exigiam organização manual, acompanhamento disperso e conferência repetitiva para garantir que cada etapa fosse executada corretamente.",
         solution:
-          "Leitura, classificação, transferência e registro das etapas em um fluxo assistido por automação.",
+          "O SARA centraliza rotinas automáticas, organiza arquivos, executa transferências, registra histórico, gera relatórios e permite acompanhar processos por telas padronizadas.",
         result:
-          "Mais padronização, trilha de execução e economia de tempo em rotinas administrativas.",
+          "Menos esforço manual, maior controle das execuções, redução de retrabalho e uma rotina mais rastreável para operações administrativas.",
         tags: ["Python", "XML", "SQLite", "Logs", "Relatórios"],
       },
       {
         id: "dominio",
         number: "02",
-        title: "Domínio → Kolek",
-        subtitle: "Conversão e padronização de relatórios financeiros",
+        title: "Kolek Converter",
+        subtitle: "Conversão automatizada de relatórios financeiros",
         summary:
-          "Automação para transformar relatórios exportados em planilhas compatíveis com o modelo final de trabalho, sem expor dados reais.",
+          "Conversor automatizado para transformar relatórios financeiros no formato de importação aceito pelo Kolek, com validação e padronização dos dados.",
         problem:
-          "Preenchimento repetitivo de planilhas, revisão linha a linha e risco de inconsistências.",
+          "Conversão manual de relatórios financeiros para o formato de importação aceito pelo Kolek, com retrabalho, revisão linha a linha e risco de erros de formatação.",
         solution:
-          "Importação do relatório, tratamento dos campos e geração de uma planilha final padronizada.",
+          "Desenvolvimento de um conversor automatizado capaz de ler relatórios, validar dados e gerar planilhas padronizadas para importação.",
         result:
-          "Processo mais rápido, conferência mais objetiva e base consistente para revisão da equipe.",
+          "Redução do trabalho manual, menos erros de formatação e processamento mais rápido para a rotina financeira.",
         tags: ["Python", "Excel", "OpenPyXL", "SQLite", "Regras de negócio"],
       },
       {
         id: "controle",
         number: "03",
-        title: "Controle Interno",
-        subtitle: "Sistema para ativos, movimentações e visão operacional",
+        title: "Sistema de Estoque",
+        subtitle: "Controle de produtos, movimentações e alertas operacionais",
         summary:
-          "Ambiente interno para centralizar cadastros, acompanhar movimentações e apoiar decisões com telas simples de controle.",
+          "Sistema interno para acompanhar produtos, categorias, entradas, saídas, movimentações recentes e alertas de estoque baixo em uma rotina centralizada.",
         problem:
-          "Informações dispersas, histórico difícil de auditar e pouco controle sobre ativos internos.",
+          "O controle de estoque dependia de consultas manuais e informações dispersas, dificultando a visibilidade de itens baixos, saídas recentes e produtos que exigiam reposição.",
         solution:
-          "Sistema com cadastros, filtros, histórico de movimentações e indicadores de acompanhamento.",
+          "Criação de um painel com cadastro de produtos, categorias, alertas, filtros e histórico de movimentações para apoiar decisões operacionais.",
         result:
-          "Mais organização, rastreabilidade e clareza para a rotina de gestão interna.",
+          "Mais rastreabilidade, melhor acompanhamento de estoque e redução de falhas na conferência de produtos e movimentações.",
         tags: ["PHP", "MySQL", "JavaScript", "Dashboards", "Inventário"],
       },
     ],
@@ -288,6 +291,9 @@ export const portfolio = {
       problem: "Problem",
       solution: "Solution",
       result: "Result",
+      visual: "Visual demonstration",
+      disclaimer:
+        "Projects developed from real operational needs. All examples use fictional, anonymized or non-sensitive data whenever necessary.",
       tagsLabel: "Case technologies",
     },
     cases: [
@@ -297,43 +303,43 @@ export const portfolio = {
         title: "SARA",
         subtitle: "Auxiliary System for Automated Routines",
         summary:
-          "Interface for organizing XMLs and operational files, running recurring routines and recording clear logs for later review.",
+          "SARA was designed to assist repetitive operational routines by organizing files, automating transfers, generating reports, scheduling executions and reducing manual effort through standardized processes.",
         problem:
-          "High-volume incoming files, manual organization and limited visibility into what was processed.",
+          "Recurring files and tasks required manual organization, dispersed monitoring and repeated checks to ensure each step had been completed correctly.",
         solution:
-          "Reading, classification, transfer and step logging in an automation-assisted workflow.",
+          "SARA centralizes automated routines, organizes files, executes transfers, records history, generates reports and makes processes easier to follow through standardized screens.",
         result:
-          "More standardization, execution traceability and time savings in administrative routines.",
+          "Less manual effort, greater execution control, reduced rework and a more traceable routine for administrative operations.",
         tags: ["Python", "XML", "SQLite", "Logs", "Reports"],
       },
       {
         id: "dominio",
         number: "02",
-        title: "Domínio → Kolek",
-        subtitle: "Financial report conversion and standardization",
+        title: "Kolek Converter",
+        subtitle: "Automated financial report conversion",
         summary:
-          "Automation that transforms exported reports into spreadsheets compatible with the final work model, without exposing real data.",
+          "Automated converter that transforms financial reports into the import format accepted by Kolek, with data validation and standardization.",
         problem:
-          "Repetitive spreadsheet filling, row-by-row review and higher risk of inconsistencies.",
+          "Manual conversion of financial reports into the import format accepted by Kolek, with rework, row-by-row review and formatting risks.",
         solution:
-          "Report import, field treatment and generation of a standardized final spreadsheet.",
+          "Development of an automated converter capable of reading reports, validating data and generating standardized spreadsheets.",
         result:
-          "A faster process, clearer review and a consistent base for the team.",
+          "Reduction of manual work, fewer formatting errors and faster processing for the financial routine.",
         tags: ["Python", "Excel", "OpenPyXL", "SQLite", "Business rules"],
       },
       {
         id: "controle",
         number: "03",
-        title: "Internal Control",
-        subtitle: "System for assets, movements and operational visibility",
+        title: "Inventory System",
+        subtitle: "Product, movement and stock alert control",
         summary:
-          "Internal environment to centralize records, track movements and support decisions with simple control screens.",
+          "Internal system for tracking products, categories, entries, exits, recent movements and low-stock alerts in a centralized workflow.",
         problem:
-          "Scattered information, difficult-to-audit history and limited control over internal assets.",
+          "Inventory control depended on manual checks and scattered information, making it harder to see low-stock items, recent exits and products that required replenishment.",
         solution:
-          "System with records, filters, movement history and follow-up indicators.",
+          "A dashboard with product records, categories, alerts, filters and movement history to support operational decisions.",
         result:
-          "More organization, traceability and clarity for internal management routines.",
+          "More traceability, better stock monitoring and fewer failures when reviewing products and movements.",
         tags: ["PHP", "MySQL", "JavaScript", "Dashboards", "Inventory"],
       },
     ],

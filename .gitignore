@@ -2,6 +2,9 @@ node_modules/
 dist/
 .cache/
 .npm-cache/
+print_kolek/
+prints_*/
+ChatGPT Image*.png
 .env
 .env.*
 npm-debug.log*
