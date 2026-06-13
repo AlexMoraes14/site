@@ -10,15 +10,18 @@ export function ImageLightbox({
   onPrevious,
 }) {
   const closeButtonRef = useRef(null);
+  const panelRef = useRef(null);
 
   useEffect(() => {
     if (!isOpen) {
       return undefined;
     }
 
-    const previousOverflow = document.body.style.overflow;
-    document.body.style.overflow = "hidden";
     closeButtonRef.current?.focus();
+    panelRef.current?.scrollIntoView({
+      behavior: "smooth",
+      block: "nearest",
+    });
 
     const handleKeyDown = (event) => {
       if (event.key === "Escape") {
@@ -34,11 +37,18 @@ export function ImageLightbox({
       }
     };
 
+    const handlePointerDown = (event) => {
+      if (!panelRef.current?.contains(event.target)) {
+        onClose();
+      }
+    };
+
     window.addEventListener("keydown", handleKeyDown);
+    document.addEventListener("pointerdown", handlePointerDown);
 
     return () => {
-      document.body.style.overflow = previousOverflow;
       window.removeEventListener("keydown", handleKeyDown);
+      document.removeEventListener("pointerdown", handlePointerDown);
     };
   }, [isOpen, onClose, onNext, onPrevious]);
 
@@ -52,16 +62,10 @@ export function ImageLightbox({
   return (
     <div
       className="image-lightbox"
-      role="dialog"
-      aria-modal="true"
+      role="region"
       aria-label={`Galeria de screenshots de ${projectTitle}`}
-      onClick={(event) => {
-        if (event.target === event.currentTarget) {
-          onClose();
-        }
-      }}
     >
-      <div className="lightbox-panel">
+      <div className="lightbox-panel" ref={panelRef}>
         <div className="lightbox-topbar">
           <div>
             <small>{projectTitle}</small>

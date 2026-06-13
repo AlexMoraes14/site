@@ -725,21 +725,15 @@ h3 {
 }
 
 .image-lightbox {
-  position: fixed;
-  inset: 0;
-  z-index: 60;
-  display: grid;
-  place-items: center;
-  padding: 28px;
-  background: rgba(2, 5, 10, 0.74);
-  backdrop-filter: blur(18px);
+  position: relative;
+  z-index: 2;
+  margin-top: 16px;
   animation: lightboxFade 180ms ease both;
 }
 
 .lightbox-panel {
   display: grid;
-  width: min(1240px, 100%);
-  max-height: min(88vh, 920px);
+  width: 100%;
   border: 1px solid rgba(54, 223, 255, 0.26);
   border-radius: 8px;
   background:
@@ -816,12 +810,12 @@ h3 {
   display: grid;
   min-height: 0;
   place-items: center;
-  padding: 18px;
+  padding: 18px 64px;
 }
 
 .lightbox-stage img {
   max-width: 100%;
-  max-height: calc(88vh - 112px);
+  max-height: min(72vh, 760px);
   border: 1px solid rgba(202, 229, 255, 0.18);
   border-radius: 8px;
   box-shadow: 0 24px 90px rgba(0, 0, 0, 0.46);
@@ -1524,11 +1518,11 @@ h3 {
   }
 
   .image-lightbox {
-    padding: 12px;
+    margin-top: 14px;
   }
 
   .lightbox-panel {
-    max-height: 92vh;
+    width: 100%;
   }
 
   .lightbox-stage {
@@ -1536,7 +1530,7 @@ h3 {
   }
 
   .lightbox-stage img {
-    max-height: calc(92vh - 100px);
+    max-height: 70vh;
   }
 
   .lightbox-arrow {
