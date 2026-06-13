@@ -78,7 +78,7 @@ export const portfolio = {
       result: "Resultado",
       visual: "Demonstração visual",
       disclaimer:
-        "Projetos desenvolvidos a partir de necessidades operacionais reais. Todos os exemplos usam dados fictícios, anonimizados ou não sensíveis sempre que necessário.",
+        "Projetos desenvolvidos a partir de necessidades reais de operação. Informações sensíveis, nomes internos e dados de clientes foram removidos ou anonimizados.",
       tagsLabel: "Tecnologias do case",
     },
     cases: [
@@ -88,43 +88,43 @@ export const portfolio = {
         title: "SARA",
         subtitle: "Sistema Auxiliar de Rotinas Automáticas",
         summary:
-          "Sistema criado para apoiar rotinas operacionais repetitivas, organizando arquivos, automatizando transferências, gerando relatórios, agendando execuções e reduzindo esforço manual com processos padronizados.",
+          "Assistente de automação para rotinas fiscais repetitivas. O sistema identifica empresas, lê documentos, separa XMLs por tipo e organiza tudo automaticamente nas pastas corretas.",
         problem:
-          "Arquivos e tarefas recorrentes exigiam organização manual, acompanhamento disperso e conferência repetitiva para garantir que cada etapa fosse executada corretamente.",
+          "Equipes fiscais costumam receber muitos XMLs misturados em uma única pasta. Identificar a empresa, o tipo de documento e o destino correto manualmente é lento, repetitivo e sujeito a erros.",
         solution:
-          "O SARA centraliza rotinas automáticas, organiza arquivos, executa transferências, registra histórico, gera relatórios e permite acompanhar processos por telas padronizadas.",
+          "O SARA automatiza o fluxo completo. Primeiro, mapeia as pastas das empresas lendo documentos e identificando CNPJs. Depois, quando os XMLs chegam, analisa cada arquivo, identifica empresa e tipo de documento, e move ou copia tudo para o local correto.",
         result:
-          "Menos esforço manual, maior controle das execuções, redução de retrabalho e uma rotina mais rastreável para operações administrativas.",
+          "O processo fica mais rápido, padronizado e rastreável. A equipe deixa de abrir arquivos um por um, procurar CNPJs, separar documentos fiscais e organizar pastas manualmente.",
         tags: ["Python", "XML", "SQLite", "Logs", "Relatórios"],
       },
       {
         id: "dominio",
         number: "02",
-        title: "Kolek Converter",
-        subtitle: "Conversão automatizada de relatórios financeiros",
+        title: "Conversor Financeiro",
+        subtitle: "Automação para geração de planilhas financeiras padronizadas",
         summary:
-          "Conversor automatizado para transformar relatórios financeiros no formato de importação aceito pelo Kolek, com validação e padronização dos dados.",
+          "Automação financeira que transforma relatórios de contas a receber em uma planilha padronizada, pronta para revisão e importação em uma plataforma externa.",
         problem:
-          "Conversão manual de relatórios financeiros para o formato de importação aceito pelo Kolek, com retrabalho, revisão linha a linha e risco de erros de formatação.",
+          "A equipe financeira precisava transformar manualmente relatórios de contas a receber em um modelo específico de planilha. Isso envolvia copiar dados, conferir clientes, ajustar formatação e revisar muitos registros.",
         solution:
-          "Desenvolvimento de um conversor automatizado capaz de ler relatórios, validar dados e gerar planilhas padronizadas para importação.",
+          "O Conversor Financeiro lê a base de clientes, atualiza os dados em uma base local, processa o relatório de contas a receber e preenche automaticamente o modelo de importação preservando estrutura, regras e formatação.",
         result:
-          "Redução do trabalho manual, menos erros de formatação e processamento mais rápido para a rotina financeira.",
+          "A rotina reduz digitação manual, evita erros de formatação, melhora a padronização e torna a conferência final muito mais rápida.",
         tags: ["Python", "Excel", "OpenPyXL", "SQLite", "Regras de negócio"],
       },
       {
         id: "controle",
         number: "03",
         title: "Sistema de Estoque",
-        subtitle: "Controle de produtos, movimentações e alertas operacionais",
+        subtitle: "Controle interno de materiais, entradas, saídas e alertas",
         summary:
-          "Sistema interno para acompanhar produtos, categorias, entradas, saídas, movimentações recentes e alertas de estoque baixo em uma rotina centralizada.",
+          "Sistema web para centralizar o controle de materiais internos, como suprimentos de escritório, itens de limpeza, papéis e produtos operacionais.",
         problem:
-          "O controle de estoque dependia de consultas manuais e informações dispersas, dificultando a visibilidade de itens baixos, saídas recentes e produtos que exigiam reposição.",
+          "Controle de estoque feito manualmente ou em planilhas dispersas dificulta saber o que está disponível, o que está acabando e quem movimentou cada item.",
         solution:
-          "Criação de um painel com cadastro de produtos, categorias, alertas, filtros e histórico de movimentações para apoiar decisões operacionais.",
+          "O sistema centraliza produtos, categorias, entradas, saídas, responsáveis pelas movimentações, níveis atuais de estoque, alertas de estoque baixo e histórico de cada alteração.",
         result:
-          "Mais rastreabilidade, melhor acompanhamento de estoque e redução de falhas na conferência de produtos e movimentações.",
+          "A empresa ganha mais visibilidade, organização e controle sobre materiais internos, reduzindo conferências manuais e melhorando a gestão operacional.",
         tags: ["PHP", "MySQL", "JavaScript", "Dashboards", "Inventário"],
       },
     ],
@@ -199,13 +199,13 @@ export const portfolio = {
         "08:14 · Empresas identificadas",
         "08:15 · Relatório gerado",
       ],
-      dominioLabel: "Preview fictício Domínio para Kolek",
+      dominioLabel: "Preview fictício do conversor financeiro",
       report: "Relatório",
       source: "Domínio",
       treatment: "Tratamento",
       automation: "Automação",
       spreadsheet: "Planilha",
-      destination: "Kolek",
+      destination: "Importação",
       spreadsheetRows: [
         ["Centro", "Documento", "Status"],
         ["ADM", "000184", "OK"],
@@ -293,7 +293,7 @@ export const portfolio = {
       result: "Result",
       visual: "Visual demonstration",
       disclaimer:
-        "Projects developed from real operational needs. All examples use fictional, anonymized or non-sensitive data whenever necessary.",
+        "Projects developed from real operational needs. Sensitive information, internal names and client data were removed or anonymized.",
       tagsLabel: "Case technologies",
     },
     cases: [
@@ -303,43 +303,43 @@ export const portfolio = {
         title: "SARA",
         subtitle: "Auxiliary System for Automated Routines",
         summary:
-          "SARA was designed to assist repetitive operational routines by organizing files, automating transfers, generating reports, scheduling executions and reducing manual effort through standardized processes.",
+          "Automation assistant for repetitive fiscal routines. The system identifies companies, reads documents, separates XMLs by document type and organizes everything automatically into the correct folders.",
         problem:
-          "Recurring files and tasks required manual organization, dispersed monitoring and repeated checks to ensure each step had been completed correctly.",
+          "Fiscal teams often receive many XML files mixed in a single folder. Manually identifying the company, document type and correct destination folder is slow, repetitive and prone to mistakes.",
         solution:
-          "SARA centralizes automated routines, organizes files, executes transfers, records history, generates reports and makes processes easier to follow through standardized screens.",
+          "SARA automates the full organization flow. First, it maps company folders by reading documents and identifying CNPJs. Then, when XMLs are received, it analyzes each file, identifies the company and document type, and moves or copies everything to the correct location.",
         result:
-          "Less manual effort, greater execution control, reduced rework and a more traceable routine for administrative operations.",
+          "The process becomes faster, standardized and traceable. The team no longer needs to open files one by one, search for CNPJs, separate fiscal documents or organize folders manually.",
         tags: ["Python", "XML", "SQLite", "Logs", "Reports"],
       },
       {
         id: "dominio",
         number: "02",
-        title: "Kolek Converter",
-        subtitle: "Automated financial report conversion",
+        title: "Financial Converter",
+        subtitle: "Automation for standardized financial spreadsheets",
         summary:
-          "Automated converter that transforms financial reports into the import format accepted by Kolek, with data validation and standardization.",
+          "Financial automation that transforms accounts receivable reports into a standardized spreadsheet, ready for review and import into an external platform.",
         problem:
-          "Manual conversion of financial reports into the import format accepted by Kolek, with rework, row-by-row review and formatting risks.",
+          "The financial team needed to manually transform accounts receivable reports into a specific spreadsheet model. This involved copying data, checking client information, adjusting formatting and reviewing many records.",
         solution:
-          "Development of an automated converter capable of reading reports, validating data and generating standardized spreadsheets.",
+          "The Financial Converter reads the client base, updates data in a local database, processes the accounts receivable report and automatically fills the import model while preserving its structure, rules and formatting.",
         result:
-          "Reduction of manual work, fewer formatting errors and faster processing for the financial routine.",
+          "The routine reduces manual typing, avoids formatting errors, improves standardization and makes the final review much faster.",
         tags: ["Python", "Excel", "OpenPyXL", "SQLite", "Business rules"],
       },
       {
         id: "controle",
         number: "03",
         title: "Inventory System",
-        subtitle: "Product, movement and stock alert control",
+        subtitle: "Internal control of materials, entries, exits and alerts",
         summary:
-          "Internal system for tracking products, categories, entries, exits, recent movements and low-stock alerts in a centralized workflow.",
+          "Web system that centralizes internal material control, such as office supplies, cleaning products, paper materials and operational items.",
         problem:
-          "Inventory control depended on manual checks and scattered information, making it harder to see low-stock items, recent exits and products that required replenishment.",
+          "Inventory control done manually or through scattered spreadsheets makes it difficult to know what is available, what is running low and who moved each item.",
         solution:
-          "A dashboard with product records, categories, alerts, filters and movement history to support operational decisions.",
+          "The system centralizes products, categories, entries, exits, movement owners, current stock levels, low-stock alerts and the history of each change.",
         result:
-          "More traceability, better stock monitoring and fewer failures when reviewing products and movements.",
+          "The company gains more visibility, organization and control over internal materials, reducing manual checks and improving operational management.",
         tags: ["PHP", "MySQL", "JavaScript", "Dashboards", "Inventory"],
       },
     ],
@@ -413,13 +413,13 @@ export const portfolio = {
         "08:14 · Companies identified",
         "08:15 · Report generated",
       ],
-      dominioLabel: "Fictitious Domínio to Kolek preview",
+      dominioLabel: "Fictitious financial converter preview",
       report: "Report",
       source: "Domínio",
       treatment: "Treatment",
       automation: "Automation",
       spreadsheet: "Spreadsheet",
-      destination: "Kolek",
+      destination: "Import",
       spreadsheetRows: [
         ["Center", "Document", "Status"],
         ["ADM", "000184", "OK"],
