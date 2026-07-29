@@ -1,0 +1,31 @@
+# Alexsandro Moraes Tech
+
+Alexsandro Moraes Tech is a professional portfolio focused on practical automation for business operations.
+
+## Website
+
+- URL: https://alexmoraestech.com/
+- Language: Portuguese (Brazil)
+- Primary audience: companies and teams that need to reduce manual work, organize operational routines, and build internal systems.
+
+## Core Expertise
+
+- Automation of repetitive operational routines
+- Internal systems for teams and administrative processes
+- Spreadsheet conversion, validation, and import preparation
+- XML, PDF, Excel, SQLite, and Python workflows
+- File organization, report generation, scheduling, and data standardization
+
+## Portfolio Message
+
+Alexsandro Moraes Tech understands real operational problems and builds systems that generate measurable outcomes: less manual work, fewer formatting errors, faster processing, and more reliable routines.
+
+## Case Study Themes
+
+- SARA: Sistema Auxiliar de Rotinas Automaticas for organizing files, automating transfers, generating reports, scheduling executions, and reducing repetitive effort.
+- Conversor Financeiro: automated conversion of financial reports into standardized import spreadsheets.
+- Sistema de Estoque: internal stock control interface for visibility, movement tracking, and operational organization.
+
+## Contact
+
+The official website is the canonical source for contact and portfolio information: https://alexmoraestech.com/
