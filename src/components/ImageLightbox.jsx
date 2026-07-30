@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export function ImageLightbox({
   images,
@@ -11,7 +11,13 @@ export function ImageLightbox({
 }) {
   const closeButtonRef = useRef(null);
   const panelRef = useRef(null);
+  const imageScrollRef = useRef(null);
   const touchYRef = useRef(null);
+  const [isZoomed, setIsZoomed] = useState(false);
+
+  useEffect(() => {
+    setIsZoomed(false);
+  }, [currentIndex, isOpen]);
 
   useEffect(() => {
     if (!isOpen) {
@@ -62,6 +68,13 @@ export function ImageLightbox({
       role="region"
       aria-label={`Galeria de screenshots de ${projectTitle}`}
       onWheel={(event) => {
+        if (
+          isZoomed &&
+          imageScrollRef.current?.contains(event.target)
+        ) {
+          return;
+        }
+
         event.preventDefault();
         window.scrollBy({
           top: event.deltaY,
@@ -72,6 +85,13 @@ export function ImageLightbox({
         touchYRef.current = event.touches[0]?.clientY ?? null;
       }}
       onTouchMove={(event) => {
+        if (
+          isZoomed &&
+          imageScrollRef.current?.contains(event.target)
+        ) {
+          return;
+        }
+
         if (touchYRef.current === null) {
           return;
         }
@@ -115,11 +135,31 @@ export function ImageLightbox({
             </button>
           )}
 
-          <img
-            key={image}
-            src={image}
-            alt={`${projectTitle} - screenshot ampliado ${currentIndex + 1}`}
-          />
+          <div
+            className={
+              isZoomed
+                ? "lightbox-image-scroll is-zoomed"
+                : "lightbox-image-scroll"
+            }
+            ref={imageScrollRef}
+          >
+            <img
+              key={image}
+              src={image}
+              alt={`${projectTitle} - screenshot ampliado ${currentIndex + 1}`}
+            />
+          </div>
+
+          <button
+            className="lightbox-zoom"
+            type="button"
+            onClick={() => setIsZoomed((zoomed) => !zoomed)}
+            aria-label={isZoomed ? "Ajustar imagem a tela" : "Ampliar imagem"}
+            aria-pressed={isZoomed}
+          >
+            <span aria-hidden="true">{isZoomed ? "-" : "+"}</span>
+            {isZoomed ? "Ajustar" : "Ampliar"}
+          </button>
 
           {hasMultipleImages && (
             <button
