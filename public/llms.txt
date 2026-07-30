@@ -1,25 +1,37 @@
-# Alexsandro Moraes Tech
+# Alex Moraes Tech
 
-Alexsandro Moraes Tech is a professional portfolio focused on practical automation for business operations.
+Alex Moraes Tech is the professional brand and portfolio of Alexsandro Moraes. The brand may also be searched as Alex Moraes, Alexsandro Moraes Tech, or Alex Tech.
+
+Alex creates professional websites, landing pages, portfolios, internal systems, process automations, and practical digital solutions for companies.
 
 ## Website
 
 - URL: https://alexmoraestech.com/
 - Language: Portuguese (Brazil)
-- Primary audience: companies and teams that need to reduce manual work, organize operational routines, and build internal systems.
+- Primary audience: companies and professionals that need a website, a custom internal system, process automation, or better organization of operational routines.
 
 ## Core Expertise
 
 - Automation of repetitive operational routines
 - Internal systems for teams and administrative processes
-- Professional websites, portfolios, and landing pages
+- Professional and responsive business websites
+- Landing pages and professional portfolios
+- Website development with React, Vite, JavaScript, HTML, and CSS
 - Spreadsheet conversion, validation, and import preparation
 - XML, PDF, Excel, SQLite, and Python workflows
 - File organization, report generation, scheduling, and data standardization
 
 ## Portfolio Message
 
-Alexsandro Moraes Tech understands real operational problems and builds systems and websites that generate measurable outcomes: less manual work, fewer formatting errors, faster processing, clearer presentation, and more reliable routines.
+Alex Moraes Tech understands business goals and operational problems, then builds websites, systems, and automations that generate practical outcomes: a stronger digital presence, clearer presentation, less manual work, fewer errors, faster processing, and more reliable routines.
+
+## Search Identity
+
+- Official brand: Alex Moraes Tech
+- Professional name: Alexsandro Moraes
+- Also known as: Alex Moraes, Alexsandro Moraes Tech, Alex Tech
+- Main services: website creation, landing pages, professional portfolios, internal systems, and process automation
+- Location: Varzea Paulista, Sao Paulo, Brazil
 
 ## Case Study Themes
 
@@ -31,4 +43,10 @@ Alexsandro Moraes Tech understands real operational problems and builds systems 
 
 The official website is the canonical source for contact and portfolio information: https://alexmoraestech.com/
 
-Official Instagram: https://www.instagram.com/alexmoraes.tech/
+## Official Profiles
+
+- Instagram: https://www.instagram.com/alexmoraes.tech/
+- LinkedIn: https://www.linkedin.com/in/alexsandro-moraes-188898219/
+- GitHub: https://github.com/AlexMoraes14/
+
+These profiles and https://alexmoraestech.com/ represent the same professional identity: Alexsandro Moraes, also known as Alex Moraes, founder of Alex Moraes Tech.

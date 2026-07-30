@@ -11,9 +11,9 @@ export const languages = {
 
 export const portfolio = {
   pt: {
-    metaTitle: "Alexsandro Moraes Tech | Automação de Processos",
+    metaTitle: "Alex Moraes Tech | Sites, Sistemas e Automação",
     metaDescription:
-      "Portfólio de Alexsandro Moraes Tech: automação de processos, sistemas internos, criação de sites, integrações, Python, Excel, XML, PDFs e bancos de dados.",
+      "Alex Moraes Tech cria sites profissionais, sistemas internos e automações sob medida. Portfólio de Alexsandro Moraes com soluções digitais para empresas.",
     profile: {
       name: "Alexsandro Moraes",
       brand: "Alexsandro Moraes Tech",
@@ -29,7 +29,7 @@ export const portfolio = {
       tagline:
         "Transformando tarefas repetitivas em processos automáticos, rastreáveis e eficientes.",
       focus:
-        "Automação de processos, sistemas internos, criação de sites, integrações, Python, Excel, XML, PDFs e bancos de dados.",
+        "Criação de sites profissionais, sistemas internos e automações sob medida para empresas, com soluções em React, Python, integrações e bancos de dados.",
     },
     nav: {
       about: "Sobre",
@@ -63,8 +63,8 @@ export const portfolio = {
     ],
     about: {
       eyebrow: "Sobre",
-      title: "Antes de automatizar, eu entendo o processo.",
-      text: "O foco não é apenas entregar código. É analisar a rotina, encontrar gargalos, preservar regras de negócio e criar uma solução prática para reduzir erros, padronizar etapas e gerar resultado real na operação.",
+      title: "Tecnologia começa entendendo o objetivo do negócio.",
+      text: "Sou Alexsandro Moraes, à frente da Alex Moraes Tech. Crio sites profissionais, sistemas internos e automações sob medida, unindo apresentação, tecnologia e processos para entregar soluções digitais claras, práticas e alinhadas ao resultado que cada negócio precisa.",
       noteTitle: "Modo de trabalho",
       note:
         "Diagnóstico do fluxo, desenho da automação, validação com dados fictícios ou controlados e entrega com clareza para manutenção futura.",
@@ -130,7 +130,7 @@ export const portfolio = {
     ],
     servicesIntro: {
       eyebrow: "Serviços",
-      title: "Automação aplicada ao trabalho que acontece todos os dias.",
+      title: "Sites, sistemas e automações para necessidades reais.",
     },
     services: [
       {
@@ -178,10 +178,10 @@ export const portfolio = {
     contact: {
       eyebrow: "Contato",
       title: "Vamos transformar uma rotina manual em um processo confiável?",
-      text: "Envie uma mensagem com a tarefa que consome tempo hoje. A conversa pode começar pelos canais abaixo, com uma descrição simples do processo e dos arquivos envolvidos.",
+      text: "Envie uma mensagem por um dos canais oficiais abaixo, com uma descrição simples do site, sistema ou processo de que você precisa.",
       primaryCta: "Falar sobre uma automação",
       secondaryCta: "Ver cases",
-      metaLabel: "Dados de contato",
+      metaLabel: "Perfis e canais oficiais de Alexsandro Moraes",
       instagram: "Instagram",
       linkedin: "LinkedIn",
       github: "GitHub",
@@ -232,9 +232,9 @@ export const portfolio = {
     },
   },
   en: {
-    metaTitle: "Alexsandro Moraes Tech | Process Automation",
+    metaTitle: "Alex Moraes Tech | Websites, Systems and Automation",
     metaDescription:
-      "Portfolio of Alexsandro Moraes Tech: process automation, internal systems, website creation, integrations, Python, Excel, XML, PDFs and databases.",
+      "Alex Moraes Tech creates professional websites, internal systems and custom automations. Alexsandro Moraes' portfolio of practical business solutions.",
     profile: {
       name: "Alexsandro Moraes",
       brand: "Alexsandro Moraes Tech",
@@ -250,7 +250,7 @@ export const portfolio = {
       tagline:
         "Turning repetitive tasks into automated, traceable and efficient processes.",
       focus:
-        "Process automation, internal systems, website creation, integrations, Python, Excel, XML, PDFs and databases.",
+        "Professional websites, internal systems and custom business automations using React, Python, integrations and databases.",
     },
     nav: {
       about: "About",
@@ -284,8 +284,8 @@ export const portfolio = {
     ],
     about: {
       eyebrow: "About",
-      title: "Before automating, I understand the process.",
-      text: "The goal is not just to deliver code. It is to analyze the workflow, find bottlenecks, preserve business rules and create a practical solution that reduces errors, standardizes steps and creates real operational value.",
+      title: "Technology starts with understanding the business goal.",
+      text: "I am Alexsandro Moraes, founder of Alex Moraes Tech. I create professional websites, internal systems and custom automations, combining presentation, technology and processes to deliver clear, practical digital solutions aligned with each business goal.",
       noteTitle: "Working method",
       note:
         "Workflow diagnosis, automation design, validation with fictitious or controlled data and delivery with clarity for future maintenance.",
@@ -351,7 +351,7 @@ export const portfolio = {
     ],
     servicesIntro: {
       eyebrow: "Services",
-      title: "Automation applied to everyday operational work.",
+      title: "Websites, systems and automations for real needs.",
     },
     services: [
       {
@@ -399,10 +399,10 @@ export const portfolio = {
     contact: {
       eyebrow: "Contact",
       title: "Shall we turn a manual routine into a reliable process?",
-      text: "Send a message describing the task that takes time today. The conversation can start through the channels below, with a simple description of the process and files involved.",
+      text: "Send a message through one of the official channels below, with a simple description of the website, system or process you need.",
       primaryCta: "Discuss an automation",
       secondaryCta: "View cases",
-      metaLabel: "Contact details",
+      metaLabel: "Official profiles and channels of Alexsandro Moraes",
       instagram: "Instagram",
       linkedin: "LinkedIn",
       github: "GitHub",

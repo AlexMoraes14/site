@@ -7,16 +7,19 @@ export function ContactCTA({ content }) {
       href: profile.instagramUrl,
       label: contact.instagram,
       value: profile.instagram,
+      isProfile: true,
     },
     {
       href: profile.linkedinUrl,
       label: contact.linkedin,
       value: profile.linkedin,
+      isProfile: true,
     },
     {
       href: profile.githubUrl,
       label: contact.github,
       value: profile.github,
+      isProfile: true,
     },
     {
       href: profile.mailUrl,
@@ -37,7 +40,7 @@ export function ContactCTA({ content }) {
             className="button primary"
             href={profile.instagramUrl}
             target="_blank"
-            rel="noreferrer"
+            rel="me noreferrer"
           >
             {contact.primaryCta}
           </a>
@@ -53,7 +56,12 @@ export function ContactCTA({ content }) {
 
         <div className="contact-links">
           {contactLinks.map((link) => (
-            <a href={link.href} key={link.label} target="_blank" rel="noreferrer">
+            <a
+              href={link.href}
+              key={link.label}
+              target="_blank"
+              rel={link.isProfile ? "me noreferrer" : "noreferrer"}
+            >
               <small>{link.label}</small>
               <strong>{link.value}</strong>
             </a>
