@@ -13,7 +13,7 @@ export const portfolio = {
   pt: {
     metaTitle: "Alexsandro Moraes Tech | Automação de Processos",
     metaDescription:
-      "Portfólio de Alexsandro Moraes Tech: automação de processos, sistemas internos, integrações, Python, Excel, XML, PDFs e bancos de dados.",
+      "Portfólio de Alexsandro Moraes Tech: automação de processos, sistemas internos, criação de sites, integrações, Python, Excel, XML, PDFs e bancos de dados.",
     profile: {
       name: "Alexsandro Moraes",
       brand: "Alexsandro Moraes Tech",
@@ -29,7 +29,7 @@ export const portfolio = {
       tagline:
         "Transformando tarefas repetitivas em processos automáticos, rastreáveis e eficientes.",
       focus:
-        "Automação de processos, sistemas internos, integrações, Python, Excel, XML, PDFs e bancos de dados.",
+        "Automação de processos, sistemas internos, criação de sites, integrações, Python, Excel, XML, PDFs e bancos de dados.",
     },
     nav: {
       about: "Sobre",
@@ -38,7 +38,7 @@ export const portfolio = {
       contact: "Contato",
     },
     hero: {
-      eyebrow: "Automação empresarial · Sistemas internos · Integrações",
+      eyebrow: "Automação empresarial · Sistemas internos · Sites",
       primaryCta: "Ver cases",
       secondaryCta: "Falar sobre uma automação",
       actionsLabel: "Ações principais",
@@ -142,6 +142,10 @@ export const portfolio = {
         text: "Ferramentas sob medida para cadastro, consulta, controle de processos, relatórios e acompanhamento operacional.",
       },
       {
+        title: "Sites profissionais",
+        text: "Sites, portfólios e páginas de apresentação responsivas para empresas e profissionais que precisam mostrar valor com clareza.",
+      },
+      {
         title: "Integração de dados",
         text: "Conexões práticas entre planilhas, XMLs, PDFs, bancos de dados, APIs e sistemas que ainda dependem de etapas manuais.",
       },
@@ -164,6 +168,8 @@ export const portfolio = {
       "SQLite",
       "MySQL",
       "PHP",
+      "React",
+      "Vite",
       "JavaScript",
       "HTML/CSS",
       "APIs",
@@ -182,7 +188,7 @@ export const portfolio = {
       email: "E-mail",
     },
     footer:
-      "Automação empresarial · Sistemas internos · Integrações",
+      "Automação empresarial · Sistemas internos · Sites",
     mockups: {
       saraLabel: "Preview fictício do SARA",
       saraTitle: "SARA · Organizador",
@@ -228,7 +234,7 @@ export const portfolio = {
   en: {
     metaTitle: "Alexsandro Moraes Tech | Process Automation",
     metaDescription:
-      "Portfolio of Alexsandro Moraes Tech: process automation, internal systems, integrations, Python, Excel, XML, PDFs and databases.",
+      "Portfolio of Alexsandro Moraes Tech: process automation, internal systems, website creation, integrations, Python, Excel, XML, PDFs and databases.",
     profile: {
       name: "Alexsandro Moraes",
       brand: "Alexsandro Moraes Tech",
@@ -244,7 +250,7 @@ export const portfolio = {
       tagline:
         "Turning repetitive tasks into automated, traceable and efficient processes.",
       focus:
-        "Process automation, internal systems, integrations, Python, Excel, XML, PDFs and databases.",
+        "Process automation, internal systems, website creation, integrations, Python, Excel, XML, PDFs and databases.",
     },
     nav: {
       about: "About",
@@ -253,7 +259,7 @@ export const portfolio = {
       contact: "Contact",
     },
     hero: {
-      eyebrow: "Business automation · Internal systems · Integrations",
+      eyebrow: "Business automation · Internal systems · Websites",
       primaryCta: "View cases",
       secondaryCta: "Discuss an automation",
       actionsLabel: "Main actions",
@@ -357,6 +363,10 @@ export const portfolio = {
         text: "Custom tools for records, queries, process control, reports and operational monitoring.",
       },
       {
+        title: "Professional websites",
+        text: "Responsive websites, portfolios and presentation pages for businesses and professionals that need to communicate value clearly.",
+      },
+      {
         title: "Data integration",
         text: "Practical connections between spreadsheets, XMLs, PDFs, databases, APIs and systems that still depend on manual steps.",
       },
@@ -379,6 +389,8 @@ export const portfolio = {
       "SQLite",
       "MySQL",
       "PHP",
+      "React",
+      "Vite",
       "JavaScript",
       "HTML/CSS",
       "APIs",
@@ -396,7 +408,7 @@ export const portfolio = {
       github: "GitHub",
       email: "Email",
     },
-    footer: "Business automation · Internal systems · Integrations",
+    footer: "Business automation · Internal systems · Websites",
     mockups: {
       saraLabel: "Fictitious SARA preview",
       saraTitle: "SARA · Organizer",

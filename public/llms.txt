@@ -12,13 +12,14 @@ Alexsandro Moraes Tech is a professional portfolio focused on practical automati
 
 - Automation of repetitive operational routines
 - Internal systems for teams and administrative processes
+- Professional websites, portfolios, and landing pages
 - Spreadsheet conversion, validation, and import preparation
 - XML, PDF, Excel, SQLite, and Python workflows
 - File organization, report generation, scheduling, and data standardization
 
 ## Portfolio Message
 
-Alexsandro Moraes Tech understands real operational problems and builds systems that generate measurable outcomes: less manual work, fewer formatting errors, faster processing, and more reliable routines.
+Alexsandro Moraes Tech understands real operational problems and builds systems and websites that generate measurable outcomes: less manual work, fewer formatting errors, faster processing, clearer presentation, and more reliable routines.
 
 ## Case Study Themes
 
@@ -29,3 +30,5 @@ Alexsandro Moraes Tech understands real operational problems and builds systems 
 ## Contact
 
 The official website is the canonical source for contact and portfolio information: https://alexmoraestech.com/
+
+Official Instagram: https://www.instagram.com/alexmoraes.tech/

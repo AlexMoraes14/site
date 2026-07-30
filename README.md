@@ -1,6 +1,6 @@
 # Alexsandro Moraes Tech - Portfolio
 
-Portfolio profissional em React + Vite para Alexsandro Moraes Tech, com foco em automação de processos, sistemas internos, integrações, Python, Excel, XML, PDFs e bancos de dados.
+Portfolio profissional em React + Vite para Alexsandro Moraes Tech, com foco em automação de processos, sistemas internos, criação de sites, integrações, Python, Excel, XML, PDFs e bancos de dados.
 
 ## Rodar localmente
 
