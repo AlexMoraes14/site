@@ -10,8 +10,16 @@ import { Services } from "./components/Services";
 import { TechStack } from "./components/TechStack";
 import { languages, portfolio } from "./data/portfolio";
 
+function setMetaContent(selector, content) {
+  document.querySelector(selector)?.setAttribute("content", content);
+}
+
 export default function App() {
   const [language, setLanguage] = useState(() => {
+    if (window.location.pathname.replace(/\/+$/, "") === "/en") {
+      return "en";
+    }
+
     const savedLanguage = localStorage.getItem("portfolio-language");
     return savedLanguage && portfolio[savedLanguage] ? savedLanguage : "pt";
   });
@@ -20,11 +28,25 @@ export default function App() {
   useEffect(() => {
     document.documentElement.lang = languages[language].locale;
     document.title = content.metaTitle;
-    document
-      .querySelector('meta[name="description"]')
-      ?.setAttribute("content", content.metaDescription);
+    setMetaContent('meta[name="description"]', content.metaDescription);
+    setMetaContent('meta[property="og:title"]', content.metaTitle);
+    setMetaContent('meta[property="og:description"]', content.metaDescription);
+    setMetaContent(
+      'meta[property="og:locale"]',
+      languages[language].locale.replace("-", "_"),
+    );
+    setMetaContent('meta[name="twitter:title"]', content.metaTitle);
+    setMetaContent('meta[name="twitter:description"]', content.metaDescription);
     localStorage.setItem("portfolio-language", language);
   }, [content, language]);
+
+  const handleLanguageChange = (nextLanguage) => {
+    if (nextLanguage === language) {
+      return;
+    }
+
+    window.location.href = nextLanguage === "en" ? "/en/" : "/";
+  };
 
   return (
     <>
@@ -32,7 +54,7 @@ export default function App() {
         content={content}
         language={language}
         languages={languages}
-        onLanguageChange={setLanguage}
+        onLanguageChange={handleLanguageChange}
       />
       <main>
         <Hero content={content} />

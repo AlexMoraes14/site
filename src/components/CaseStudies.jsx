@@ -3,7 +3,7 @@ import { Reveal } from "./Reveal";
 import { SectionIntro } from "./SectionIntro";
 
 export function CaseStudies({ content }) {
-  const { cases, casesIntro } = content;
+  const { cases, casesIntro, gallery, lightbox } = content;
 
   return (
     <section className="section-shell cases-section" id="cases">
@@ -58,7 +58,12 @@ export function CaseStudies({ content }) {
               </div>
             </div>
 
-            <CaseGallery caseItem={caseItem} label={casesIntro.visual} />
+            <CaseGallery
+              caseItem={caseItem}
+              gallery={gallery}
+              label={casesIntro.visual}
+              lightbox={lightbox}
+            />
           </Reveal>
         ))}
       </div>

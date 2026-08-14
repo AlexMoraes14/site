@@ -1,7 +1,14 @@
+import { useState } from "react";
 import { Reveal } from "./Reveal";
 
 export function ContactCTA({ content }) {
   const { contact, profile } = content;
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    project: "",
+  });
+  const [copied, setCopied] = useState(false);
   const contactLinks = [
     {
       href: profile.instagramUrl,
@@ -28,6 +35,31 @@ export function ContactCTA({ content }) {
     },
   ];
 
+  const handleSubmit = (event) => {
+    event.preventDefault();
+
+    const body = [
+      `${contact.nameLabel}: ${formData.name}`,
+      `${contact.emailLabel}: ${formData.email}`,
+      "",
+      `${contact.projectLabel}:`,
+      formData.project,
+    ].join("\n");
+    const subject = encodeURIComponent(contact.emailSubject);
+
+    window.location.href = `${profile.mailUrl}?subject=${subject}&body=${encodeURIComponent(body)}`;
+  };
+
+  const copyEmail = async () => {
+    try {
+      await navigator.clipboard.writeText(profile.email);
+      setCopied(true);
+      window.setTimeout(() => setCopied(false), 2000);
+    } catch {
+      window.location.href = profile.mailUrl;
+    }
+  };
+
   return (
     <section className="section-shell contact-section" id="contato">
       <Reveal className="contact-panel">
@@ -35,19 +67,63 @@ export function ContactCTA({ content }) {
         <h2>{contact.title}</h2>
         <p>{contact.text}</p>
 
-        <div className="contact-actions">
-          <a
-            className="button primary"
-            href={profile.instagramUrl}
-            target="_blank"
-            rel="me noreferrer"
+        <form className="contact-form" onSubmit={handleSubmit}>
+          <div className="form-field">
+            <label htmlFor="contact-name">{contact.nameLabel}</label>
+            <input
+              id="contact-name"
+              name="name"
+              onChange={(event) =>
+                setFormData((data) => ({ ...data, name: event.target.value }))
+              }
+              placeholder={contact.namePlaceholder}
+              required
+              type="text"
+              value={formData.name}
+            />
+          </div>
+
+          <div className="form-field">
+            <label htmlFor="contact-email">{contact.emailLabel}</label>
+            <input
+              id="contact-email"
+              name="email"
+              onChange={(event) =>
+                setFormData((data) => ({ ...data, email: event.target.value }))
+              }
+              placeholder={contact.emailPlaceholder}
+              required
+              type="email"
+              value={formData.email}
+            />
+          </div>
+
+          <div className="form-field form-field-wide">
+            <label htmlFor="contact-project">{contact.projectLabel}</label>
+            <textarea
+              id="contact-project"
+              name="project"
+              onChange={(event) =>
+                setFormData((data) => ({ ...data, project: event.target.value }))
+              }
+              placeholder={contact.projectPlaceholder}
+              required
+              rows="5"
+              value={formData.project}
+            />
+          </div>
+
+          <button className="button primary contact-submit" type="submit">
+            {contact.submitCta}
+          </button>
+          <button
+            className="button secondary contact-copy"
+            onClick={copyEmail}
+            type="button"
           >
-            {contact.primaryCta}
-          </a>
-          <a className="button secondary" href="#cases">
-            {contact.secondaryCta}
-          </a>
-        </div>
+            {copied ? contact.emailCopied : contact.copyEmail}
+          </button>
+        </form>
 
         <div className="contact-meta" aria-label={contact.metaLabel}>
           <span>{profile.name}</span>
@@ -59,8 +135,8 @@ export function ContactCTA({ content }) {
             <a
               href={link.href}
               key={link.label}
-              target="_blank"
-              rel={link.isProfile ? "me noreferrer" : "noreferrer"}
+              target={link.isProfile ? "_blank" : undefined}
+              rel={link.isProfile ? "me noreferrer" : undefined}
             >
               <small>{link.label}</small>
               <strong>{link.value}</strong>
