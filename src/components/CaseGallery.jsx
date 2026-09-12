@@ -23,7 +23,7 @@ const screenshotGroups = {
   ],
 };
 
-export function CaseGallery({ caseItem, label }) {
+export function CaseGallery({ caseItem, gallery, label, lightbox }) {
   const screenshots = screenshotGroups[caseItem.id] ?? [];
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isLightboxOpen, setIsLightboxOpen] = useState(false);
@@ -58,7 +58,9 @@ export function CaseGallery({ caseItem, label }) {
       <div className="case-gallery" aria-label={`${label} ${caseItem.title}`}>
         <div className="case-gallery-head">
           <small>{label}</small>
-          <span>{screenshots.length} telas reais</span>
+          <span>
+            {screenshots.length} {gallery.imageCount}
+          </span>
         </div>
 
         <div className="screenshot-grid">
@@ -70,11 +72,11 @@ export function CaseGallery({ caseItem, label }) {
               key={src}
               type="button"
               onClick={() => openLightbox(index)}
-              aria-label={`Abrir screenshot ${index + 1} de ${caseItem.title}`}
+              aria-label={`${gallery.openImage} ${index + 1} ${gallery.of} ${caseItem.title}`}
             >
               <img
                 src={src}
-                alt={`${caseItem.title} - screenshot ${index + 1}`}
+                alt={`${caseItem.title} - ${gallery.imageAlt} ${index + 1}`}
                 loading="lazy"
               />
             </button>
@@ -86,6 +88,7 @@ export function CaseGallery({ caseItem, label }) {
         images={screenshots}
         currentIndex={currentIndex}
         projectTitle={caseItem.title}
+        labels={lightbox}
         isOpen={isLightboxOpen}
         onClose={closeLightbox}
         onNext={showNext}
