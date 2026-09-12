@@ -20,8 +20,7 @@ export default function App() {
       return "en";
     }
 
-    const savedLanguage = localStorage.getItem("portfolio-language");
-    return savedLanguage && portfolio[savedLanguage] ? savedLanguage : "pt";
+    return "pt";
   });
   const content = useMemo(() => portfolio[language], [language]);
 
@@ -37,7 +36,6 @@ export default function App() {
     );
     setMetaContent('meta[name="twitter:title"]', content.metaTitle);
     setMetaContent('meta[name="twitter:description"]', content.metaDescription);
-    localStorage.setItem("portfolio-language", language);
   }, [content, language]);
 
   const handleLanguageChange = (nextLanguage) => {
