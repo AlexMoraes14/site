@@ -15,10 +15,15 @@ export function ImageLightbox({
   const panelRef = useRef(null);
   const previousFocusRef = useRef(null);
   const touchStartRef = useRef(null);
+  const lastTapRef = useRef(null);
+  const pinchStartRef = useRef(null);
   const [isZoomed, setIsZoomed] = useState(false);
 
   useEffect(() => {
     setIsZoomed(false);
+    touchStartRef.current = null;
+    lastTapRef.current = null;
+    pinchStartRef.current = null;
   }, [currentIndex, isOpen]);
 
   useEffect(() => {
@@ -98,22 +103,81 @@ export function ImageLightbox({
   const hasMultipleImages = images.length > 1;
 
   const handleImageTouchStart = (event) => {
+    if (event.touches.length > 1) {
+      const [firstTouch, secondTouch] = event.touches;
+      pinchStartRef.current = Math.hypot(
+        secondTouch.clientX - firstTouch.clientX,
+        secondTouch.clientY - firstTouch.clientY,
+      );
+      touchStartRef.current = null;
+      return;
+    }
+
     const touch = event.touches[0];
     touchStartRef.current = touch
       ? { x: touch.clientX, y: touch.clientY }
       : null;
   };
 
+  const handleImageTouchMove = (event) => {
+    if (event.touches.length < 2 || !pinchStartRef.current) {
+      return;
+    }
+
+    const [firstTouch, secondTouch] = event.touches;
+    const distance = Math.hypot(
+      secondTouch.clientX - firstTouch.clientX,
+      secondTouch.clientY - firstTouch.clientY,
+    );
+
+    if (distance > pinchStartRef.current * 1.08) {
+      setIsZoomed(true);
+    } else if (distance < pinchStartRef.current * 0.86) {
+      setIsZoomed(false);
+    }
+  };
+
   const handleImageTouchEnd = (event) => {
-    if (isZoomed || !hasMultipleImages || !touchStartRef.current) {
+    if (pinchStartRef.current) {
+      pinchStartRef.current = null;
       touchStartRef.current = null;
+      lastTapRef.current = null;
       return;
     }
 
     const touch = event.changedTouches[0];
-    const deltaX = touch.clientX - touchStartRef.current.x;
-    const deltaY = touch.clientY - touchStartRef.current.y;
+    const touchStart = touchStartRef.current;
     touchStartRef.current = null;
+
+    if (!touch || !touchStart) {
+      lastTapRef.current = null;
+      return;
+    }
+
+    const deltaX = touch.clientX - touchStart.x;
+    const deltaY = touch.clientY - touchStart.y;
+    const isTap = Math.abs(deltaX) < 14 && Math.abs(deltaY) < 14;
+    const now = Date.now();
+    const lastTap = lastTapRef.current;
+    const isDoubleTap =
+      isTap &&
+      lastTap &&
+      now - lastTap.time < 320 &&
+      Math.hypot(touch.clientX - lastTap.x, touch.clientY - lastTap.y) < 28;
+
+    if (isDoubleTap) {
+      setIsZoomed((zoomed) => !zoomed);
+      lastTapRef.current = null;
+      return;
+    }
+
+    lastTapRef.current = isTap
+      ? { time: now, x: touch.clientX, y: touch.clientY }
+      : null;
+
+    if (isZoomed || !hasMultipleImages) {
+      return;
+    }
 
     if (Math.abs(deltaX) < 48 || Math.abs(deltaX) <= Math.abs(deltaY)) {
       return;
@@ -172,13 +236,18 @@ export function ImageLightbox({
                 : "lightbox-image-scroll"
             }
             onTouchEnd={handleImageTouchEnd}
+            onTouchMove={handleImageTouchMove}
             onTouchStart={handleImageTouchStart}
+            onDoubleClick={() => setIsZoomed((zoomed) => !zoomed)}
           >
             <img
               key={image}
               src={image}
               alt={`${projectTitle} - ${labels.enlargedImageAlt} ${currentIndex + 1}`}
             />
+            <span className='lightbox-gesture-hint' aria-hidden='true'>
+              {isZoomed ? labels.fit : labels.expand}
+            </span>
           </div>
 
           <button
